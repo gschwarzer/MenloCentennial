@@ -1,0 +1,406 @@
+html, body {
+  margin:0;
+}
+
+body {
+  background: #2f5075 url("/centennial/images/centennial_bg.jpg");
+  font-family: "myriad-pro-n4","myriad-pro","Myriad Pro","Gill Sans","Gill Sans MT",sans-serif;
+  overflow-y: scroll 
+}
+
+/* HEADER STYLES */
+.header {
+  text-transform: uppercase;
+  margin: 15px 25px;
+}
+.header a {
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .75);
+}
+.header .title {
+  color: #ffffff;
+  font-size:3.8em;
+  margin-right: 20px;
+}
+.header .subtitle {
+  color: #fcb040;
+  font-size:3.3em;
+}
+
+/* PHOTO GRID STYLES */
+#grid {
+  width: 100%;
+  position:absolute;
+  overflow: hidden;
+  background-image: none;
+  background-color: #051528;
+  padding: 13px 0 14px 0;
+  text-align:center;
+  font-size: 0;
+}
+
+#top, #bottom {
+  z-index: 210;
+  -webkit-pointer-events:none;
+  pointer-events:none;
+  width: 100%;
+  height: 33px;
+  position:absolute;
+}
+#top {
+  background: url("/centennial/images/indent_top.png") no-repeat top;
+  background-size: 100% 100%;
+  top:0;
+}
+#bottom {
+  background: url("/centennial/images/indent_bottom.png") no-repeat bottom;
+  background-size: 100% 100%;
+  bottom:0;
+}
+
+#cover {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: absolute;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  background-color: #051528;
+}
+
+.panel {
+  position: relative;
+  display:inline-block;
+}
+
+.photo {
+  float: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  cursor: pointer;
+  
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  -o-transition: all .15s;
+  -moz-transition: all .15s ease-in-out;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+}
+
+.photo:hover {
+  z-index: 300;
+  
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,1);
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,1);
+}
+
+#backButton {
+  position:absolute;
+  top:40px;
+  right:25px;
+  z-index:30;
+  font-size:16px;
+  opacity:0;
+}
+
+a.button, input.button {
+  background: #223A57;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 2px 8px 3px;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.3);
+  border: 1px solid #ffffff;
+  margin-right: 20px;
+  -webkit-text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  -moz-text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+a.button:hover, input.button:hover {
+  text-decoration: none;
+  background: #525559 !important;
+}
+
+#social a.button:first-of-type {
+  background:#4F78CD;
+  padding: 2px 8px 3px 0;
+}
+
+#social a.button:last-of-type {
+  background:#45B0E3;
+  padding: 2px 8px 3px 0;
+}
+
+#social a img {
+  vertical-align: text-bottom;
+}
+      
+#social a.button:first-of-type img {
+  margin: 0 5px 0 3px;
+}
+
+#social a.button:last-of-type img {
+  margin: 0 7px 1px 6px;
+}
+
+#content {
+  z-index:10;
+  top:0;
+  left:0;
+  position: absolute;
+  text-align:left;
+  font-size: 15px;
+  background-color:#ffffff;
+  background: url("/centennial/images/debut_light.png");
+  margin:13px 1%;
+  opacity:0;
+  width:98.1%;
+}
+
+#leftColumn {
+  float:left; 
+  width:60%;
+  padding-bottom: 25px;
+}
+
+#photoLarge {
+  padding:25px 25px 0 25px;
+}
+
+#photoLarge img, #photoLarge iframe {
+  border:1px solid #888888;
+  padding: 2px;
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  width:100%;
+}
+
+#caption {
+  font-style: italic;
+  padding: 10px 25px 0 25px;
+}
+
+#paragraph {
+  padding: 25px 25px 0 25px;
+}
+
+#rightColumn {
+  float:right; 
+  width:40%;
+}
+
+#social {
+  padding:28px 0 25px 25px;
+}
+
+#comments {
+  overflow-y:auto; 
+  padding:0 25px 0 25px;
+}
+
+.comment {
+  margin-bottom:40px;
+  position:relative;
+}
+
+.quotationMark {
+  font-size:70px;
+  font-family:serif;
+  color:#000000;
+  font-weight:bold;
+  opacity:0.4;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+.commentText {
+  padding:10px 0 0 50px;
+}
+
+.author {
+  text-align:right;
+  margin-top:15px;
+}
+
+.author .name {
+  font-style:italic;
+}
+.author .date {
+  color:#777777;
+  font-size:13px;
+}
+
+#commentForm h3 {
+  font-family: "Helvetica Neue",Helvetica,sans-serif;
+  font-size:25px;
+  font-weight: 200;
+  color:#2E4E74;
+  margin: 20px 0;
+}
+
+#commentForm .success {
+  background-color:#DFF2BF;
+  color:#4F8A10;
+  border:1px solid #4F8A10;
+  padding:8px 12px;
+  display:none;
+}
+
+#commentForm div {
+  margin-bottom: 15px;
+}
+
+#commentForm div span {
+  font-size:13px;
+  color:#777777;
+}
+
+#commentForm .inputField {
+  width:100%;
+  border:1px solid #aaaaaa;
+  font-size:15px;
+  font-family: "myriad-pro-n4","myriad-pro","Myriad Pro","Gill Sans","Gill Sans MT",sans-serif;
+  padding:3px 5px;
+  margin-top:5px;
+  box-sizing: border-box;
+}
+
+#commentForm textarea.inputField {
+  height:130px;
+}
+
+#commentForm select.inputField {
+  width:30%;
+}
+
+#commentSubmit {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#commentSubmit:hover {
+  text-decoration: none;
+  background: #366b8c;
+}
+
+/* NAVIGATION SYLES */
+#nav {
+  text-transform: uppercase;
+  float:right;
+  font-size:1.6em;
+  margin: 25px 0 100px 25px;
+}
+#nav a {
+  text-decoration: none;
+  margin-right: 3em;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .75);
+}
+#nav a:hover {
+  color: #fcb040;
+}
+
+
+@media (max-width: 1320px) {
+  #social a.button span.long {
+    display:none;
+  }
+}
+
+@media (max-width: 1024px) {
+  #backButton {
+    top:25px;
+    right:10px;
+  }
+  
+  #backButton a {
+    font-size: 12px;
+  }
+
+  #leftColumn {
+    width:100%;
+  }
+  
+  #photoLarge {
+    padding: 45px 15px 0 15px;
+  }
+  
+  #caption {
+    padding: 10px 15px 0 15px;
+  }
+  
+  #paragraph {
+    padding: 15px 15px 0 15px;
+  }
+  
+  #rightColumn {
+    width:100%;
+  }
+  
+  #social {
+    padding:15px 0 15px 15px;
+  }
+  
+  #social a.button span.long {
+    display:inline;
+  }
+  
+  #comments {
+    overflow-y:auto; 
+    padding:0 15px 0 15px;
+    height:auto;
+  }
+  
+  #commentForm {
+    padding:0 10px 25px 0;
+  }
+  #nav {
+    font-size:1.3em;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 736px) {
+  .header {
+    margin: 10px 20px;
+  }
+  .header .title {
+    font-size:1.9em;
+    margin-right: 10px;
+  }
+  .header .subtitle {
+    font-size:1.6em;
+  }
+  #nav {
+    float:none;
+    margin: 25px 0 0 0;
+    font-size:1.2em;
+  }
+  #nav a {
+    text-align: center;
+    margin:0 0 10px 0;
+    display: block;
+  }
+}
+
+@media (max-width: 345px) {
+  #backButton {
+    right:0;
+  }
+  
+  #social a.button span.long {
+    display:none;
+  }
+}
